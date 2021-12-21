@@ -26,8 +26,12 @@ public class Move_to_Target : MonoBehaviour
         if (target.Length <= 0)
             return;
         Vector3 dir = target[targed_Index].position - tr.position;
-        dir.Normalize(); dir = dir * speed * Time.deltaTime;
+        //print("dir\n" + " x: " + dir.x + " y: " + dir.y + " z: " + dir.z);
+        dir.Normalize();
+        print("dirNormal\n" + dir);
+        dir = dir * speed * Time.deltaTime;
         tr.position += dir;
+        //print("dirTime\n" + " x: " + dir.x + " y: " + dir.y + " z: " + dir.z);
     }
 
     private void OnTriggerEnter(Collider other)
